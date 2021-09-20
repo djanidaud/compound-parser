@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/djanidaud/compound-parser"
+    "url": "https://github.com/djanidaud/compound-parser.git"
   },
   "homepage": "https://github.com/djanidaud/compound-parser#readme",
   "keywords": ["compound", "molecule", "chemistry", "parser", "atoms"],
