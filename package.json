@@ -1,7 +1,7 @@
 {
   "name": "compound-parser",
   "version": "1.0.2",
-  "description": "A simple and fast parser for chemical compounds",
+  "description": "A fast and simple parser for chemical compounds",
   "main": "index.js",
   "scripts": {
     "test": "jest"
@@ -9,7 +9,7 @@
   "bugs": {
     "url": "https://github.com/djanidaud/compound-parser/issues"
   },
-  "homepage": "https://github.com/djanidaud/compound-parser",
+  "homepage": "https://github.com/djanidaud/compound-parser#readme",
   "keywords": ["compound", "molecule", "chemistry", "parser", "atoms"],
   "author": "Dzhani Daud",
   "license": "ISC",
