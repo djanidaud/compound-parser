@@ -12,4 +12,4 @@ const ironHydroxide = parse("Fe(OH)3");         // Map {"Fe" => 1, "O" => 3, "H"
 const someCompound = parse("H2((O2)2(Ca2)2)2"); // Map {"H" => 2, "O" => 8, "Ca" => 8}
 ```
 # Installation
-You can use the package by installing it with `npm i compound-parser`
+You can use the package by installing it with [npm](https://www.npmjs.com/package/compound-parser) `npm i compound-parser`
