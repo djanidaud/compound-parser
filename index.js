@@ -2,8 +2,8 @@
  * Takes a string representing a chemical compound (eg. "H2O")
  * and parses it into a Map containing the different atoms (and their count) that make up that compound (eg. [H:2, O:1])
  *
- * @param    {String} compound    String representing a chemical compound
- * @return   {Map}                Contains the different atoms (and their count) that make up that compound
+ * @param    {string} compound     String representing a chemical compound
+ * @return   {Map<string, number>} Contains the different atoms (and their count) that make up that compound
  */
 const parseCompound = (compound) => {
   const atomsMap = new Map();
@@ -31,7 +31,7 @@ const parseCompound = (compound) => {
  *  "K3(Al(OH)6)" would return ['K3', '(', 'Al1', '(', 'O1', 'H1', ')', '6', ')', '1']
  *
  * @param    {string} compound   A chemical compound
- * @return   {array}             Tokens
+ * @return   {string[]}          Tokens
  */
 const getTokens = (compound) => {
   const tokens = compound.match(/[A-Z][a-z]*\d*|[()]|\d+/g);
@@ -76,9 +76,9 @@ const getTokens = (compound) => {
  *      the stack would now look like ['(', 'Al', 'O6', 'H6']. The last bracketed term will be processed when we reach a ")"
  *
  *
- * @param    {number} scale      The number which we use to scale (multiply) the contents of the brackets
- * @param    {Map}    atomsMap   The Map object stores the count of atoms
- * @param    {array}  stack      The stack, containing the contents of the brackets
+ * @param    {number} scale                   The number which we use to scale (multiply) the contents of the brackets
+ * @param    {Map<string, number>} atomsMap   The Map object stores the count of atoms
+ * @param    {string[]}  stack                The stack, containing the contents of the brackets
  */
 const processBrackets = (scale, atomsMap, stack) => {
   let bracketContents = [];
@@ -102,9 +102,9 @@ const processBrackets = (scale, atomsMap, stack) => {
  * The scale parameter is used when the element is nested withing brackets
  * (eg. in the compound "Fe(OH)3", the element "Fe" has a scale of 1 while "H" and "O" have a scale of 3)
  *
- * @param    {String} element    String representing a simple chemical element
- * @param    {Map}    atomsMap   The Map object stores the count of atoms
- * @param    {number} scale      Used when the element is nested within brackets
+ * @param    {string} element                 String representing a simple chemical element
+ * @param    {Map<string, number>} atomsMap   The Map object stores the count of atoms
+ * @param    {number} scale                   Used when the element is nested within brackets
  */
 const processElement = (element, atomsMap, scale = 1) => {
   const atoms = parseAtoms(element);
@@ -122,9 +122,9 @@ const processElement = (element, atomsMap, scale = 1) => {
  * eg.
  *  ["H2","Na"], scale=3 would return ["H6","Na3"]
  *
- * @param    {array}  elements    The elements that we will scale
+ * @param    {string[]} elements  The elements that we will scale
  * @param    {number} scale       The scale
- * @return   {array}              The scaled elements
+ * @return   {string[]}           The scaled elements
  */
 const scaleBracketedElements = (elements, scale) =>
   elements
